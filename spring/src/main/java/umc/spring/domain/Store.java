@@ -10,6 +10,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -32,4 +33,10 @@ public class Store extends BaseEntity {
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Review> reviewList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    private List<Mission> missionList = new ArrayList<>();
+
+//    public void setRegion(Region region) {
+//        this.region = region;
+//    }
 }
