@@ -32,7 +32,7 @@ public class MissionExistValidator implements ConstraintValidator<ExistMission, 
 
         if (!target.isEmpty()&&target.get().getStatus()== MissionStatus.CHALLENGING){
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(ErrorStatus.MISSION_NOT_FOUND.getMessage()).addConstraintViolation();
+            context.buildConstraintViolationWithTemplate(ErrorStatus.MISSION_NOT_FOUND.toString()).addConstraintViolation();
             return false;
         }
         return true;
